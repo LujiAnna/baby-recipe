@@ -9,45 +9,33 @@ const recipeData = [
 ];
 
 // RecipeList Component
-const RecipeList = ({ recipe }) => ( <
-        div > {
-            recipe.map(meal => < Recipe {...meal }
-                />)}</div >
-            );
+const RecipeList = ({recipe}) => (<div>{recipe.map(meal => <Recipe {...meal } />)}</div>);
 
-            // Recipe Card Component
-            class Recipe extends React.Component {
-                render() {
-                    const recipe = this.props;
-                    return ( <
-                        article >
-                        <
-                        img src = { recipe.strMealThumb }
-                        alt = ""
-                        style = {
-                            { height: 65 }
-                        }
-                        /> <
-                        section className = "info" >
-                        <
-                        h3 > Meal: { recipe.strMeal } < /h3>  <
-                        p className = "ingredient" > Ingredient: { recipe.strIngredient1 } < /p>                     </section >
-                        <
-                        /article>
-                    )
-                }
+// Recipe Card Component
+class Recipe extends React.Component {
+    render() {
+    const recipe = this.props;
+      return (
+        <article>
+          <img src = {recipe.strMealThumb} alt="" style={{ height: 65 }} />
+          <section className = "info" >
+            <h3> Meal: { recipe.strMeal } </h3> 
+              <p className = "ingredient" > Ingredient: { recipe.strIngredient1 } </p>                     
+          </section >
+        </article>
+             )
             }
+   }
 
             //  App Component
             class App extends React.Component {
                 render() {
-                    return ( <
-                        div >
-                        <
-                        h1 className = 'header' > { this.props.title } < /h1>                                             <RecipeList recipe = { recipeData } / >
-                        <
-                        /div>
-                    )
+                    return ( 
+                      <div>
+                        <h1 className = 'header' > { this.props.title } </h1>                                          
+                        <RecipeList recipe = { recipeData } />
+                      </div>
+                             )
                 }
             }
 
