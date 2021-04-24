@@ -7,7 +7,7 @@ import reportWebVitals from './reportWebVitals';
 ReactDOM.render( <
     React.StrictMode >
     <
-    App title = "The Recipe App" / >
+    App title = " 🍲 The Recipe App" / >
     <
     /React.StrictMode>,
     document.getElementById('root')
