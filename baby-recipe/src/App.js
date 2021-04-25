@@ -37,14 +37,32 @@ const RecipeList = ({ recipe }) => ( <
                     )
                 }
             }
+//Form Component
+   class Form extends React.Component {
 
-            //  App Component
+                render() {
+                    return ( <
+                        form action = '' > <
+                        input type = 'text'
+                        placeholder = 'meal name' / >
+                        <
+                        button > Add recipe < /button> < /
+                        form >
+                    )
+                }
+            }
+
+            //  App Component: Add form element Add state to be used by both form and recipeList component in App component
             class App extends React.Component {
+                 state = {
+                    recipes: recipeData,
+                }
                 render() {
                     return ( <
                         div >
-                        <
-                        h1 className = 'header' > { this.props.title } < /h1>                                             <RecipeList recipe = { recipeData } / >
+                        <h1 className = 'header' > { this.props.title } < /h1>  
+                            <Form />
+                            <RecipeList recipe = { recipeData } / >
                         <
                         /div>
                     )
