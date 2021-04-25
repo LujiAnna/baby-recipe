@@ -29,10 +29,18 @@ class Recipe extends React.Component {
 
 //Form Component
    class Form extends React.Component {
+       
+        userNameInput =  React.createRef();
+              handleSubmit = e => {
+                  e.preventDefault();
+                  console.log(this.userNameInput.current.value);
+              }
+       
           render() {
+             
             return ( 
-                <form action = '' > 
-                  <input type = 'text' placeholder = 'meal name' / >
+                <form action = '' onSubmit ={this.handleSubmit} > 
+                  <input type = 'text' placeholder = 'meal name' ref = {this.userNameInput} required/ >
                   <button > Add recipe < /button> 
                 < /form >
                     )
